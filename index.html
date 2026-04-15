@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Street Coffeehouse & Bakery</title>
+    <meta name="description" content="Main Street Coffeehouse & Bakery - Fresh coffee, pastries, and light bites in Sturgis, Mississippi">
+    <meta name="keywords" content="coffee, bakery, sturgis mississippi, espresso, pastries, breakfast">
+    <title>Main Street Coffeehouse & Bakery | Sturgis, MS</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -87,6 +89,26 @@
             gap: 0.5rem;
         }
         
+        /* About Section */
+        .about-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--coffee);
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
         /* Menu Section */
         .menu-section {
             padding: 5rem 2rem;
@@ -161,6 +183,107 @@
             font-size: 1.5rem;
         }
         
+        /* Gallery Section */
+        .gallery-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--coffee);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--coffee);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .reviews-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .review-card {
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        
+        .review-author {
+            margin-top: 1rem;
+            color: var(--gold);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--coffee);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            border: 1px solid var(--coffee);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .contact-form button {
+            background: var(--gold);
+            color: var(--coffee);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background: var(--warm);
+            color: white;
+        }
+        
         /* Footer CTA */
         .footer-cta {
             background: var(--coffee);
@@ -175,10 +298,26 @@
             margin-bottom: 1rem;
         }
         
-        .footer-cta .cta-button {
-            background: var(--gold);
-            color: var(--coffee);
-            margin-top: 1rem;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-link:hover {
+            color: white;
         }
         
         /* Mobile */
@@ -189,6 +328,10 @@
             .info-bar {
                 gap: 1rem;
                 font-size: 0.9rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -204,9 +347,15 @@
     <!-- Info Bar -->
     <div class="info-bar">
         <span>📍 2741 MS-12, Sturgis, MS</span>
-        <span>📞 (662) 547-6122</span>
-        <span>⏰ Open Daily 6AM - 3PM</span>
+        <span>⏰ Mon-Fri 6AM-2PM, Sat-Sun 8AM-3PM</span>
     </div>
+    
+    <!-- About -->
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>Main Street Coffeehouse & Bakery is Sturgis' favorite spot for fresh coffee, homemade pastries, and light bites. Located in the heart of Mississippi, we're proud to serve our community with quality ingredients and warm hospitality.</p>
+        <p>Whether you're grabbing an espresso on your morning commute or settling in for a leisurely weekend brunch, we've got something delicious waiting for you.</p>
+    </section>
     
     <!-- Menu -->
     <section class="menu-section" id="menu">
@@ -230,6 +379,10 @@
                     <span>Cold Brew</span>
                     <span>$3.50</span>
                 </div>
+                <div class="menu-item">
+                    <span>Americano</span>
+                    <span>$3.00</span>
+                </div>
             </div>
             
             <div class="menu-card">
@@ -250,6 +403,10 @@
                     <span>Muffin</span>
                     <span>$2.50</span>
                 </div>
+                <div class="menu-item">
+                    <span>Scone</span>
+                    <span>$2.95</span>
+                </div>
             </div>
             
             <div class="menu-card">
@@ -266,6 +423,10 @@
                     <span>Soup & Bread</span>
                     <span>$5.50</span>
                 </div>
+                <div class="menu-item">
+                    <span>Avocado Toast</span>
+                    <span>$6.95</span>
+                </div>
             </div>
         </div>
     </section>
@@ -274,25 +435,72 @@
     <section class="features">
         <div class="features-grid">
             <div class="feature">
-                <h3>📱 Mobile Ordering</h3>
-                <p>Coming Soon: Order ahead and skip the line</p>
+                <h3>📱 Mobile-Friendly</h3>
+                <p>Looks perfect on phones, tablets, and desktops — customers can browse anywhere</p>
             </div>
             <div class="feature">
-                <h3>📅 Event Booking</h3>
-                <p>Reserve our space for your next gathering</p>
+                <h3>⚡ Fast Loading</h3>
+                <p>Optimized for speed — no waiting, even on slow Mississippi internet</p>
             </div>
             <div class="feature">
-                <h3>☕ Loyalty Program</h3>
-                <p>Track rewards and get free drinks</p>
+                <h3>🔍 Google Search Ready</h3>
+                <p>Shows up when people search "coffee Sturgis MS" or "bakery near me"</p>
+            </div>
+            <div class="feature">
+                <h3>🗺️ Google Maps Integration</h3>
+                <p>Easy directions, hours, and reviews synced with your Google listing</p>
+            </div>
+            <div class="feature">
+                <h3>📧 Contact Form</h3>
+                <p>Customers can message you directly — no phone calls required</p>
+            </div>
+            <div class="feature">
+                <h3>🔄 Easy Updates</h3>
+                <p>Change menu prices, hours, or photos anytime — I show you how</p>
             </div>
         </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400" alt="Coffee shop interior" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400" alt="Fresh coffee" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Pastries" class="gallery-img">
+        </div>
+    </section>
+    
+    <!-- Reviews -->
+    <section class="reviews-section">
+        <h2>What Customers Say</h2>
+        <div class="review-card">
+            <p>"Best coffee in Sturgis! The pastries are always fresh and the staff is so friendly. My go-to spot every morning."</p>
+            <div class="review-author">★★★★★ Google Review</div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Or visit us at 2741 MS-12, Sturgis, MS</p>
     </section>
     
     <!-- Footer CTA -->
     <section class="footer-cta">
         <h2>Ready for a Better Website?</h2>
         <p>This demo was built in one afternoon. Imagine what we could do together.</p>
-        <a href="mailto:youremail@example.com" class="cta-button">Let's Talk</a>
+        <div class="contact-info">
+            <a href="mailto:Necolious23@gmail.com" class="contact-link">📧 Necolious23@gmail.com</a>
+            <a href="https://www.linkedin.com/in/necolious-shaw-442873396/" target="_blank" class="contact-link">💼 LinkedIn</a>
+            <a href="tel:7185410794" class="contact-link">📱 (718) 541-0794</a>
+        </div>
     </section>
 </body>
 </html>
